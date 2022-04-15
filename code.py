@@ -5,7 +5,6 @@ from sklearn import preprocessing
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn import metrics
-from sklearn.cross_validation import train_test_split
 from sklearn.model_selection import train_test_split
 from sklearn import neighbors
 
@@ -63,4 +62,4 @@ DF = pd.DataFrame(y_pred,columns=['Predicted Personality'])
 DF.index=DF.index+1
 DF.index.names = ['Person No']
 DF.to_csv("output.csv")
-
+print(DF)

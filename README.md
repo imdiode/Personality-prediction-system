@@ -32,5 +32,3 @@ Values:
 ●	Responsible 
 ●	Lively 
 ●	dependable 
-
-
