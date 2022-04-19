@@ -26,9 +26,6 @@ print (mainarray)
 
 
 temp=df[7]
-train_y =temp.values
-# print(train_y)
-# print(mainarray)
 train_y=temp.values
 
 for i in range(len(train_y)):
