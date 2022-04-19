@@ -1,12 +1,9 @@
 import pandas as pd
 from numpy import *
-import numpy as np
-from sklearn import preprocessing
-from sklearn import datasets, linear_model
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn import metrics
-from sklearn.model_selection import train_test_split
-from sklearn import neighbors
+from sklearn import linear_model
+import sklearn.metrics as metrics
+import matplotlib.pyplot as plt
+
 
 data =pd.read_csv('train dataset.csv')
 array = data.values
@@ -49,6 +46,7 @@ for i in range(len(test)):
 df1=pd.DataFrame(test)
 
 testdf =df1[[0,1,2,3,4,5,6]]
+testval=df1[[7]]
 maintestarray=testdf.values
 print(maintestarray)
 
@@ -60,3 +58,16 @@ DF.index=DF.index+1
 DF.index.names = ['Person No']
 DF.to_csv("output.csv")
 print(DF)
+
+print(metrics.accuracy_score(testval, y_pred, normalize=True, sample_weight=None))
+
+
+plt.scatter(testdf[[0]], y_pred, color='red', label='0')
+plt.scatter(testdf[[1]], y_pred, color='blue', label='1')
+plt.scatter(testdf[[2]], y_pred, color='green', label='2')
+plt.scatter(testdf[[3]], y_pred, color='black', label='3')
+plt.scatter(testdf[[4]], y_pred, color='yellow', label='4')
+plt.scatter(testdf[[5]], y_pred, color='cyan', label='5')
+plt.scatter(testdf[[6]], y_pred, color='orange', label='6')
+plt.legend()
+plt.show()
